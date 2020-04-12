@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+@*using the same container as index.cshtml's ABOUT US section
+    only changes made was: removed link(a href) and different text content*@
+<div class"container">
+    @*will be used as a "header" but not using the header format*@
+    <div class="photo-background-holder">
+        <div class="photo-background-overlay"></div>
+        <img src="~/lib/assets/backgrounds/infotechgraphic.png" />
+        <div class="photo-background-content container-fluid h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h1 class="display-2" id="accent-text">Who are we?</h1>
+                    <p class="lead mb-0">Meet our team and our privacy policy details.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* ABOUTUS & PRIVACY POLICY
+    used the same similar photo-background class/style but added two columns for seperate text contents.*@
+<div class="photo-background-holder" style="margin-top:10px;">
+    <div class="photo-background-overlay"></div>
+    <img src="~/lib/assets/backgrounds/desk-bg.jpg" />
+    <div class="photo-background-content container-fluid h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+                <div class="row">
+                    @*ABOUT US content*@
+                    <div class="col-sm-6 text-center align-items-center">
+                        <p class="h2 mb-0" id="accent-text">About Us</p>
+                        <p class="mb-0 text-justify">
+                            <b>INFOTECH4.ME <i>Information Techonology For Me</i></b>, is our solution for creating a web service for students who are looking to further advance their career within the information technology field.
+                        </p>
+                    </div>
+                    @*PRIVACY POLICY content*@
+                    <div class="col-sm-6 text-center align-items-center">
+                        <p class="h2 mb-0" id="accent-text">@ViewData["Title"]</p>
+                        <p class="mb-0 text-justify">
+                            By registering your account with us through <i>Facebook</i> or <i>Google</i>, you are allowing us to collect your personal information (e-mail). <br />
+                            Under Construction; until services are completed and operational.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*OUR TEAM*@
+<div class="container text-center" style="margin-top:10px;">
+    <h1 class="display-2" id="cursive-text">Meet our team!</h1>
+</div>
+@*seperated into two rows to look not as packed*@
+<div class="row" style="margin-top:3px;">
+    <div class="col text-center align-items-center">
+        @* Keisha Brown *@
+        <img src="~/lib/assets/avatars/keisha-brown.png" id="avatars" /><br /> @*Avatar image with a blue border*@
+        @*i used p-paragraphs instead of h-headers, because of the spacing between lines didn't look good*@
+        <p class="mb-0 h4" id="accent-text">Keisha Brown</p> @*Name with all uppercase text with bold custom font*@
+        <p class="lead mb-0 h6">Windows Server Administrator</p> @*Role with specific size and style*@
+        <p class="mb-0 text-justify">
+            @*Role contents*@
+            Keisha is responsible for the Windows Server administration.
+            She built the Windows Server and File Server.
+            As the Server Administrator she was responsible for configure, installing, maintaining the Server.
+        </p>
+    </div> @*...and repeated for each member*@
+    <div class="col text-center align-items-center">
+        @* Mark Capada *@
+        <img src="~/lib/assets/avatars/mark-capada.PNG" id="avatars" /><br />
+        <p class="mb-0 h4" id="accent-text">Mark Capada</p>
+        <p class="lead mb-0 h6">Backend Web Developer</p>
+        <p class="mb-0 text-justify">
+            Mark is responsible for the development of the web application’s functionality.
+            He is responsible for implementing Web APIs and deploying cloud-based services for the web application through HTML, ASP.NET, and JavaScript.
+        </p>
+    </div>
+    <div class="col text-center align-items-center">
+        @* Erica Choi *@
+        <img src="~/lib/assets/avatars/erica-choi.png" id="avatars" /><br />
+        <p class="mb-0 h4" id="accent-text">Erica Choi</p>
+        <p class="lead mb-0 h6">Frontend Web Developer</p>
+        <p class="mb-0 text-justify">
+            As a frontend Web Developer, Erica is responsible for the development of the web application’s design.
+            To build a graphical user interface that displays the website’s functionality by using HTML, CSS, and Bootstrap 4.
+        </p>
+    </div>
+</div>
+<div class="row" style="margin-top:5px;">
+    <div class="col text-center align-items-center">
+        @* Daniel Marro *@
+        <img src="~/lib/assets/avatars/daniel-marro.png" id="avatars" /><br />
+        <p class="mb-0 h4" id="accent-text">Daniel Marro</p>
+        <p class="lead mb-0 h6">Network Architect</p>
+        <p class="mb-0 text-justify">
+            The network architect is responsible for designing the topology, such as device placement, VLAN creation/configuration, and addressing.
+            He is also responsible for building the topology and configuring all the routers, switches, and end-devices.
+        </p>
+    </div>
+    <div class="col text-center align-items-center">
+        @* Dinesh Singh *@
+        <img src="~/lib/assets/avatars/dinesh-singh.png" id="avatars" /><br />
+        <p class="mb-0 h4" id="accent-text">Dinesh Singh</p>
+        <p class="lead mb-0 h6">Cloud Specialist</p>
+        <p class="mb-0 text-justify">
+            As a cloud specialist, Dinesh was responsible for procuring and deploying the cloud based services, which included the Web Server and the Database.
+            This also includes managing the services to ensure they are up and running.
+            In addition to these tasks, as cloud specialist he was to procure the domain name and perform DNS transfers to the domain name.
+        </p>
+    </div>
+    <div class="col text-center align-items-center">
+        @* Keng Wai Van *@
+        <img src="~/lib/assets/avatars/keng-wai-van.png" id="avatars" /><br />
+        <p class="mb-0 h4" id="accent-text">Keng Wai Van</p>
+        <p class="lead mb-0 h6">Security Specialist</p>
+        <p class="mb-0 text-justify">
+            The Security Analyst plays a vital role in securing IT4ME’s sensitive information, proprietary information, and network infrastructure.
+            Responsibilities include implementing the security architecture outlined earlier in this report, ensuring appropriate access remains up to date, performing periodic security audits, testing disaster recovery/ incident response plans, reviewing then securing security breaches and assessing risks/ vulnerabilities.
+        </p>
+    </div>
+</div>
+

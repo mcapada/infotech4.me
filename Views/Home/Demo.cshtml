@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Demo";
+}
+
+<h1>Demo</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<br>
+<form>
+    Enter your postal code (A1A1A1):
+    <input id="Pcode" type="text" maxlength="6" style="text-transform:uppercase" value="A1A1A1">
+    <button type="button" onclick="textfunction()">Click Me!</button>
+</form>
+
+<input id="codetest" type="text" maxlength="6" style="text-transform:uppercase">
+
+
+<div id="googleMap" style="height:400px;width:100%;"></div>
+
+
+
+<script>
+
+    // var Pcode = "A1A1A1";
+    document.getElementById("Pcode").value = "A1A1A1";
+
+    function textfunction() {
+        document.getElementById("codetest").value = Pcode.value;
+    }
+
+    function myMap() {
+        var myCenter = new google.maps.LatLng(43.7854, -79.2264);
+        var mapProp = { center: myCenter, zoom: 12, scrollwheel: false, draggable: true, mapTypeId: google.maps.MapTypeId.ROADMAP };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var marker = new google.maps.Marker({ position: myCenter });
+        marker.setMap(map);
+    }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByUa6PtIX2OZDeDZQm01OYUKAd6yjBv7g&callback=myMap"></script>
+
+

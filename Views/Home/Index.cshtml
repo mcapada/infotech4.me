@@ -1,0 +1,119 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* The goal look here was to keep it modern ("trend"), simple and user-friendly;
+    this area is used to advertise our other site contents to keep it easy and user-friendly*@
+
+@* First top container - welcome - with a video background *@
+<div class="video-background-holder">
+    @*video and block position*@
+    <div class="video-background-overlay"> @*the semi-clear black overlay to read over white text*@ </div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="~/lib/assets/backgrounds/schoolvideo.mp4" type="video/mp4">
+        @*this includes the video to play in loop*@
+    </video>
+    <div class="video-background-content container h-100">
+        @*this holds the text/content in the centre of the container/block*@
+        <div class="d-flex h-100 text-center align-items-center">
+            @*keeps text within a fixed area and centered*@
+            <div class="w-100 text-white">
+                @* keeps all text white *@
+                <h1 class="display-4" style="text-transform: uppercase">welcome to</h1>  @*H1 and "display-4" H1 size-type styled and force all uppercased text*@
+                <img class="img-fluid" src="~/lib/assets/it4me-white-logo.png" />
+                @*Our logo image; "img-fluid" keeps the image not to overflow when width is being changed*@
+                <p class="lead mb-0">Information Technology For Me.</p>
+                @*"lead" makes paragraphs style stand out,  "mb" spaces between paragraphs to none=0*@
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Register and Login container *@
+<div class="row no-gutters" style="margin-top:5px">
+    @*Kept Register and Login within one area; 1 row, 2 fixed columns
+        "no gutters" was used to not show the extra margins/spacing between the two columns
+            "margin-top" was used to add a small gap at the top of this row container.*@
+    <div class="col-sm-6">
+        @* first column - Register Today!*@
+        <a class="hoverelement" href="~/Identity/Account/Register">
+            @*this link can be clicked anywhere within this container column*@
+            <div class="photo-background-holder">
+                @* This whole area will be repeated for each container but using different backgrounds and contents
+                    but the code (CSS and bootstrap4 reference) is similar as the top container (WELCOME) with the background video.
+                    The difference here; is using image photos as backgrounds with a bit darker tint overlay and a smaller height container size.*@
+                <div class="photo-background-overlay"> @*background overlay black tint*@</div>
+                <img src="~/lib/assets/backgrounds/studyarea.png" /> @*the choosen background photo*@
+                <div class="photo-background-content container h-100">
+                    <div class="d-flex h-100 text-center align-items-center">
+                        @*kept the same layout, forced text/contents to be centered and white*@
+                        <div class="w-100 text-white">
+                            <p id="nonaccent-text" style="font-size:30px">Register</p>
+                            @*"site.css => #nonaccent-text" and linked refence in the "_Layout.cshtml" used a custom font but forced the font size to be larger *@
+                            <h1 class="display-4 lead mb-0" id="accent-text">today</h1>
+                            @* "accent-text" also another bolder custom text used.*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-sm-6">
+        @* second column - LOGIN *@
+        <a href="~/Identity/Account/Login">
+            <div class="photo-background-holder">
+                <div class="photo-background-overlay"></div>
+                <img src="~/lib/assets/backgrounds/school.jpg" />
+                @* Used the exact same layout as REGISTER but changed the background and text contents.*@
+                <div class="photo-background-content container h-100">
+                    <div class="d-flex h-100 text-center align-items-center">
+                        <div class="w-100 text-white">
+                            <p id="nonaccent-text" style="font-size:30px">Already Registered?</p>
+                            <h1 class="display-4" id="accent-text">login</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+@*3rd Container - link to our DEMO - advertising demo section*@
+<div class"container" style="margin-top:5px;">
+    @* Used the exact same layout as REGISTER/LOGIN but changed into as one full row, the background and text contents.*@
+    <a href="~/Schools">
+        <div class="photo-background-holder">
+            <div class="photo-background-overlay"></div>
+            <img src="~/lib/assets/backgrounds/gradstudents.jpg" />
+            <div class="photo-background-content container-fluid h-100">
+                <div class="d-flex h-100 text-center align-items-center">
+                    <div class="w-100 text-white">
+                        <h1 class="display-4" id="cursive-text">Find your dream education</h1>
+                        @* used a different custom font, wanted something bold and cursive-like style.
+                            also referenced in the style.css and _Layout.cshtml*@
+                        <p class="lead mb-0">Click this banner to check out our demo!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+
+@* 4th container - ABOUT US / PRIVACY POLICY - "WHO ARE WE?"*@
+<div class"container" style="margin-top:5px;">
+    <a href="~/Home/Privacy">
+        <div class="photo-background-holder">
+            <div class="photo-background-overlay"></div>
+            <img src="~/lib/assets/backgrounds/infotechgraphic.png" />
+            <div class="photo-background-content container-fluid h-100">
+                <div class="d-flex h-100 text-center align-items-center">
+                    <div class="w-100 text-white">
+                        <h1 class="display-4" id="accent-text">Who are we?</h1>
+                        <p class="lead mb-0">Meet our team! <br>Click here for our privacy policy details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+

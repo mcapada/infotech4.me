@@ -1,0 +1,188 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/* Frontend Development*/
+/*video background style, overlay, and overlay contents - start*/
+.video-background-holder { /*fixed container size*/
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden; /*video can overflow no matter what the width becomes*/
+}
+
+.video-background-holder video { /*video placeholder/position*/
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+}
+
+.video-background-content { /*Text contents layout*/
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px black;
+}
+
+.video-background-overlay { /*black-opacity background overlay*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+/*video background style, overlay, and overlay contents - end*/
+
+/*image background style, overlay, and overlay contents - start*/
+.photo-background-holder { /*the only difference here, is the size and the black overlay opacity*/
+    position: relative;
+    background-color: black;
+    height: calc(60vh - 72px); 
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+.photo-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.70;
+    z-index: 1;
+}
+
+.photo-background-holder img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.photo-background-content { /*Text contents layout*/
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px black;
+}
+/*image background style, overlay, and overlay contents - end*/
+
+/* Custom fonts #id; references will be in the _Layout.cshtml*/
+#accent-text {
+    font-family: 'Concert One', cursive;
+    text-transform: uppercase; /*forced uppercase*/
+    text-align: center;
+}
+#nonaccent-text {
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    text-transform: uppercase;
+}
+#cursive-text {
+    font-family: 'Pacifico', cursive;
+    text-align: center
+}
+
+/* Privacy Policy - Avatar image layout; circle border, static sizing, centered*/
+#avatars {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #0366d6;
+}
+
+/* text formatted to fill up the width adjusted (similar as a newpaper text contents would be)*/
+.text-justify {
+    text-align: justify;
+}

@@ -1,0 +1,106 @@
+﻿@model IEnumerable<It4MEProject.Models.School>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Landing page for the website demo -->
+<!-- Sends users to a page where they can add colleges and programs -->
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<!-- Place a Google Maps Page that you can interact with -->
+<div id="googleMap" style="height:400px;width:100%;"></div>
+
+<br>
+<!-- Display the contents of the Cloud Database in list form -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.College)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProgramName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Campus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.College)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostalCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProgramName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Campus)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<script>
+    // Set the Latitude and Longitude of the markers along with their names.
+    var locations = [
+        ['Centennial', 43.7854, -79.2264, 4],
+        ['George Brown', 43.6761, -79.4105, 5],
+        ['Seneca', 43.7955, -79.3496, 3],
+    ];
+
+    // Creating the Google Maps
+    function myMap() {
+        // Setting the center of the map to Latitude and Longitude of Scarborough Town Center
+        var myCenter = new google.maps.LatLng(43.7757, -79.2591);
+        var mapProp = { center: myCenter, zoom: 12, scrollwheel: false, draggable: true, mapTypeId: google.maps.MapTypeId.ROADMAP };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        // Adding a marker on the Coordinates of myCenter
+        var marker = new google.maps.Marker({ position: myCenter });
+        marker.setMap(map);
+
+        // Creating a variable that displays text on a marker once a marker is clicked
+        var infowindow = new google.maps.InfoWindow();
+
+        
+        var marker, i;
+        // Setting all the markers of the schools to their respective Latitude and Longitude
+        for (i = 0; i < locations.length; i++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map
+            });
+
+            // Setting functionality for when a marker is clicked, it will display their respective Name
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
+    }
+
+
+
+</script>
+
+<!-- Calling the Google API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=[POWER]&callback=myMap"></script>
